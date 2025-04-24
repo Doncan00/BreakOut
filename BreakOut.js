@@ -2,7 +2,7 @@ let paddle, ball;
 let blocks = [];
 let score = 0;
 let lives = 3;
-let level = 3;
+let level = 1;
 let gameStarted = false;
 let rowsPerLevel = [4, 5, 6];
 let speedPerLevel = [5, 6.5, 8];
@@ -26,14 +26,13 @@ function draw() {
   ball.show();
 
   let remainingBlocks = 0;
-  let ballHit = false; // NUEVO: para detener múltiples rebotes
+  let ballHit = false;
 
   for (let block of blocks) {
     block.show();
     if (!block.destroyed) {
       remainingBlocks++;
 
-      // Solo permitir un rebote por frame
       if (!ballHit && block.hit(ball)) {
         score += 1;
         ballHit = true;
@@ -111,10 +110,10 @@ function setupLevel(lvl) {
       let y = row * h + topMargin;
 
       let tipo = 1;
-      if (lvl === 2 && row === 2 && col === 5) tipo = 2; // 3 golpes
+      if (lvl === 2 && row === 2 && col === 5) tipo = 2;
       if (lvl === 3) {
         if ((row === 1 && col === 3) || (row === 3 && col === 7)) tipo = 2;
-        if (row === 0 && col === 5) tipo = 3; // irrompible
+        if (row === 0 && col === 5) tipo = 3;
       }
 
       blocks.push(new Block(x, y, w, h, tipo));

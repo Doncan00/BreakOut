@@ -17,14 +17,13 @@ class Block {
     strokeWeight(1);
 
     if (this.type === 3) {
-      fill(100); // Irrompible
+      fill(100);
     } else if (this.type === 2) {
-      // Colores según daño recibido
       if (this.hits === 3) fill(255, 0, 0); // Rojo
       else if (this.hits === 2) fill(255, 140, 0); // Naranja
       else fill(255, 255, 0); // Amarillo
     } else {
-      fill(0, 200, 255); // Normal
+      fill(0, 200, 255);
     }
 
     rect(this.x, this.y, this.w, this.h);
@@ -50,7 +49,6 @@ class Block {
       ballBottom > blockTop &&
       ballTop < blockBottom
     ) {
-      // Colisión: dirección del rebote
       let overlapX = Math.min(ballRight - blockLeft, blockRight - ballLeft);
       let overlapY = Math.min(ballBottom - blockTop, blockBottom - ballTop);
 

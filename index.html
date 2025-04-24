@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Breakout en p5.js</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        canvas {
+            border: 2px solid white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Librería p5.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+
+    <!-- Tus scripts, en orden lógico -->
+    <script src="Paddle.js"></script>
+    <script src="Ball.js"></script>
+    <script src="Block.js"></script>
+    <script src="BreakOut.js"></script> <!-- Este contiene setup(), draw(), etc. -->
+</body>
+
+</html>
